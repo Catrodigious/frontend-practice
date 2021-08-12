@@ -10,7 +10,7 @@ import UserToDos from "./Components/UserToDos";
 //
 function App() {
   const [users, setUsers] = useState([]);
-  
+
   useEffect(()=>{
     async function getUsers(){
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -18,9 +18,11 @@ function App() {
       setUsers(usersFromApi);
     }
     getUsers();
-  })
+  }, []);
+
   return (
     <div className="App">
+      {users.map((user)=><UserToDos user={user} key={user.id} />)};
     </div>
   );
 }
