@@ -18,7 +18,7 @@ function App() {
       setUsers(usersFromApi);
     }
     getUsers();
-  })
+  }, []);
   return (
     <div className="App">
     </div>
