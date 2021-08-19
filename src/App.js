@@ -19,8 +19,11 @@ function App() {
     }
     getUsers();
   }, []);
+
+
   return (
     <div className="App">
+      {users.map((user)=><UserToDos user={user} key={user.id} />)}
     </div>
   );
 }
